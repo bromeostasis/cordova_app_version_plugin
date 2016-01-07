@@ -18,7 +18,7 @@ module.exports = function(context) {
 
 	fs.writeFileSync(
 		context.opts.plugin.dir + '/www/getAppVersion.js',
-		'module.exports.getAppVersion = function() { return "' + version + '";};'
+		'module.exports.getAppVersion = function() { return "' + analytics + '";};',
 		'module.exports.getAnalytics = function() { return "' + analytics + '";};'
 	);
 };
