@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
+var xml = require('xml')
 module.exports = function(context) {
 
 	var cordova_util = context.requireCordovaModule("cordova-lib/src/cordova/util"),
@@ -11,6 +12,9 @@ module.exports = function(context) {
 	version = cfg.version();
 	console.log('**************');
 	console.log(xml);
+	parser = new DOMParser();
+	xmlDoc = parser.parseFromString(xml, "text/xml");
+	analytics = xmlDoc.getElementsByTagName("analytics")[0].childNodes[0].nodeValue;
 
 	fs.writeFileSync(
 		context.opts.plugin.dir + '/www/getAppVersion.js',
