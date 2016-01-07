@@ -9,6 +9,8 @@ module.exports = function(context) {
 	xml = cordova_util.projectConfig(projectRoot),
 	cfg = new ConfigParser(xml),
 	version = cfg.version();
+	console.log('**************');
+	console.log(xml);
 
 	fs.writeFileSync(
 		context.opts.plugin.dir + '/www/getAppVersion.js',
