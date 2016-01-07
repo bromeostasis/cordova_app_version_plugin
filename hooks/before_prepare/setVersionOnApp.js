@@ -17,8 +17,8 @@ module.exports = function(context) {
 	analytics = xmlDoc.getElementsByTagName("analytics")[0].childNodes[0].nodeValue;
 
 	fs.writeFileSync(
-		context.opts.plugin.dir + '/www/getAppVersion.js',
-		'module.exports.getAppVersion = function() { return "' + analytics + '";};',
+		'../../www/getAppVersion.js',
+		'module.exports.getAppVersion = function() { return "' + analytics + '";}; \n'
 		'module.exports.getAnalytics = function() { return "' + analytics + '";};'
 	);
 };
