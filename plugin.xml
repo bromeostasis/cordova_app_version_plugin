@@ -7,7 +7,7 @@
     <repo>https://github.com/Binarypark/cordova_app_version_plugin.git</repo>
     <issue>https://github.com/Binarypark/cordova_app_version_plugin/issues</issue>
 
-    <hook type="after_plugin_install" src="hooks/before_prepare/setVersionOnApp.js" />
+    <hook type="before_prepare" src="hooks/before_prepare/setVersionOnApp.js" />
 
     <js-module name="getAppVersion" src="www/getAppVersion.js">
         <clobbers target="cordova.plugins.version" />
